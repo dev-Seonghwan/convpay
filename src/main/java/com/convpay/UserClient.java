@@ -1,5 +1,6 @@
 package com.convpay;
 
+import com.convpay.config.ApplicationConfig;
 import com.convpay.dto.PayCancelRequest;
 import com.convpay.dto.PayCancelResponse;
 import com.convpay.dto.PayRequest;
@@ -11,11 +12,12 @@ import com.convpay.type.PayMethodType;
 public class UserClient {
     public static void main(String[] args) {
 
-        ConveniencePayService conveniencePayService = new ConveniencePayService();
+        ApplicationConfig applicationConfig = new ApplicationConfig();
+        ConveniencePayService conveniencePayService = applicationConfig.conveniencePayServiceDiscountPayMethod();
 
         //GS25, 결제 1000원
         PayRequest payRequest = new PayRequest(PayMethodType.CARD,
-                ConvenienceType.GS25, 1000);
+                ConvenienceType.GS25, 50);
         PayResponse payResponse = conveniencePayService.pay(payRequest);
 
         System.out.println(payResponse);

@@ -11,10 +11,18 @@ import com.convpay.type.PayResult;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+import java.util.HashSet;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ConveniencePayServiceTest {
-    ConveniencePayService conveniencePayService = new ConveniencePayService();
+    ConveniencePayService conveniencePayService = new ConveniencePayService(
+            new HashSet<>(
+                    Arrays.asList(new MoneyAdapter(), new CardAdapter())
+            ),
+            new DiscountByConvenience()
+    );
 
     @Test
     void pay_success(){
