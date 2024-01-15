@@ -29,3 +29,8 @@
 2. 각 서비스가 본래의 역할에 충실
 3. 서비스들이 의존하는 클래스를 변경할 때는 ApplicationConfig만 수정하면 되므로 더 쉽게
 찾아갈 수 있음(분류)
+
+
+## 스프링 프레임워크로 전환
+
+![image](https://github.com/dev-Seonghwan/convpay-v2/assets/91909986/9578696e-1929-48e6-96ca-0d81ec6d7983)
